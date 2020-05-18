@@ -30,15 +30,8 @@ depends=(
 )
 
 _dir="ros_comm-${pkgver}/tools/rosgraph"
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/ros_comm/archive/${pkgver}.tar.gz"
-	"python38.patch")
-sha256sums=('49849315ca55247c656a5a50cd5caa5f33f7d212766ff09b62eae48f1dc6c3e7'
-            '57d5c7ad1638ba2bd4056a0be8ce15e681a77984b54c04a84799ef51c37e46c2')
-
-prepare() {
-  cd "${srcdir}/${_dir}"
-  patch -uN src/rosgraph/roslogging.py ../../../python38.patch || return 1
-}
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/ros_comm/archive/${pkgver}.tar.gz")
+sha256sums=('49849315ca55247c656a5a50cd5caa5f33f7d212766ff09b62eae48f1dc6c3e7')
 
 
 build() {
